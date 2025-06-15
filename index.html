@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prévention de la NIC</title>
-    
+
     <!-- PWA Manifest and Theme -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#3b82f6">
@@ -49,7 +49,7 @@
         </nav>
 
         <main>
-            <!-- Le reste de votre contenu HTML reste exactement le même -->
+            <!-- Le contenu HTML de votre application reste identique -->
             <div id="generateur" class="tab-content active">
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
                     <div id="identification-section" class="mb-8 pb-6 border-b">
@@ -233,7 +233,7 @@
     </div>
 
     <script>
-        // SCRIPT PWA AJOUTÉ ICI
+        // SCRIPT PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').then(registration => {
@@ -244,7 +244,7 @@
             });
         }
         
-        // LE RESTE DU SCRIPT EST IDENTIQUE AU FICHIER STABLE ORIGINAL
+        // SCRIPT DE L'APPLICATION
         let appState = { preRiskScore: 0, postRiskScore: 0 };
         
         document.addEventListener('DOMContentLoaded', () => {
@@ -254,7 +254,8 @@
             showTab('generateur');
             populateReferences();
         });
-
+        
+        // Le reste de votre code JS fonctionnel...
         function showTab(tabId) { 
             document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none'); 
             const currentTab = document.getElementById(tabId);
@@ -336,7 +337,6 @@
             if (level === 'Faible') elementId = 'proto-low';
             else if (level === 'Modéré') elementId = 'proto-moderate';
             else if (level === 'Élevé' || level === 'Très Élevé') elementId = 'proto-high';
-            
             const el = document.getElementById(elementId);
             if(el) el.classList.add('highlight');
         }
