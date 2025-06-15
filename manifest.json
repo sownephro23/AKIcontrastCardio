@@ -1,8 +1,8 @@
 {
-  "name": "Prévention de la NIC",
+  "name": "Prévention NIC",
   "short_name": "NIC-Prevent",
   "description": "Évaluation du risque et génération de protocole pour la prévention de la Néphropathie Induite par le Contraste.",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f1f5f9",
   "theme_color": "#3b82f6",
